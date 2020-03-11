@@ -27,12 +27,11 @@ Here is the code blocks:
 You can also download the microbit-mlx90614.hex to your micro:bit directly.
 
 
-## project site
+## Project Info
 
+* v1 is a simulator, not really using MLX90614 module.
+* v2 is the final version using MLX90614 module.
+	* URL: https://makecode.microbit.org/_UJgXmjeR5cVi
 
-URL: https://makecode.microbit.org/_UJgXmjeR5cVi
-
-
-<div style="position:relative;height:0;padding-bottom:81.97%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/---run?id=_UJgXmjeR5cVi" allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0"></iframe></div>
 
 ~ END ~
