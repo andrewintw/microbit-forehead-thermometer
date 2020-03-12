@@ -35,5 +35,9 @@ Here is the code blocks:
 You can also download the `microbit-mlx90614.hex` to your micro:bit directly.
 
 
+## Demo
+
+![](makecode-v2/demo.gif)
+
 
 ~ END ~
