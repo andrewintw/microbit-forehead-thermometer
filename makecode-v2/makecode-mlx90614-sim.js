@@ -7,9 +7,25 @@ function _2顯示偵測額溫 () {
     _顯示溫度()
 }
 function _3處理取得的溫度 () {
-    if (校正後的溫度 <= 發燒溫度) {
+    if (偵測到的溫度 <= 發燒溫度) {
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            # # # # #
+            . . . . .
+            `)
+        music.beginMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once)
         basic.showIcon(IconNames.Happy)
     } else {
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            # # # # #
+            . . . . .
+            `)
+        music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
         basic.showIcon(IconNames.Sad)
     }
     basic.pause(500)
@@ -45,11 +61,12 @@ input.onButtonPressed(Button.B, function () {
     }
 })
 function _顯示歡迎畫面 () {
+    basic.showIcon(IconNames.SmallHeart)
     basic.showIcon(IconNames.Heart)
     basic.clearScreen()
 }
 function _取得感測器溫度 () {
-    偵測到的溫度 = MLX90614.temperature(TemperatureLocation.Object)
+    偵測到的溫度 = Math.randomRange(34, 40)
 }
 function _LED進度條 (rows: number) {
     basic.clearScreen()
@@ -60,20 +77,25 @@ function _LED進度條 (rows: number) {
 }
 function _顯示溫度 () {
     basic.clearScreen()
-    校正後的溫度 = 偵測到的溫度 + 溫度校正值
-    basic.showString(convertToText(校正後的溫度).substr(0, 5))
+    basic.showString(convertToText(偵測到的溫度 + 溫度校正值).substr(0, 5))
 }
 let B程序處理中 = 0
-let 偵測到的溫度 = 0
 let 溫度累加值 = 0
 let 採樣次數 = 0
 let 溫度校正值 = 0
 let A程序處理中 = 0
 let 發燒溫度 = 0
-let 校正後的溫度 = 0
+let 偵測到的溫度 = 0
 _1初始化()
 basic.forever(function () {
     if (A程序處理中 == 0) {
+        basic.showLeds(`
+            . . . # .
+            . . # . .
+            . # # # #
+            . . # . .
+            . . . # .
+            `)
         basic.showArrow(ArrowNames.West)
     }
 })
