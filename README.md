@@ -5,7 +5,7 @@
 
 * v1 is a simulator, not really using MLX90614 module.
 * v2 is the final version using MLX90614 module.
-	* URL: https://makecode.microbit.org/_UJgXmjeR5cVi
+	* URL: https://makecode.microbit.org/_C9hiyk8h39Hb
 
 
 ## How to connect
